@@ -1,0 +1,61 @@
+$cellsize: 0.5em;
+$grid-border: 1px solid #605b56;
+$main-color: #e83927;
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #544f4a;
+  font-family: sans-serif;
+  color: #DDD;
+}
+
+.container {
+  margin: 1em
+}
+
+.wrapper {
+  width: ($cellsize * 70);
+  margin: 2em auto;
+}
+
+.controls, h1 {
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0.2em;
+  padding: 0.5em 0.75em;
+  background-color: desaturate($main-color,20%);
+  color: #EEE;
+}
+
+.row {
+  height: $cellsize;
+  border-bottom: $grid-border;
+  &:first-child {
+    border-top: $grid-border;
+  }
+  div {
+    display: inline-block;
+    vertical-align: top;
+    height: $cellsize;
+    width: $cellsize;
+    border-right: $grid-border;
+    &:first-child {
+      border-left: $grid-border;
+    }
+  }
+}
+
+.alive {
+  background-color: $main-color;
+}
